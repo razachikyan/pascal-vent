@@ -2,30 +2,60 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev;
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+const optimization = () => {
+  const config = {}
+  if(isProd) [
+    config.minimizer = [
+      new CssMinimizerPlugin(),
+    ]
+  ]
+}
+
+const babelOps = (preset) => {
+  const ops = {
+    presets: [
+      ['@babel/preset-env', { targets: "defaults" }]
+    ],
+    plugins: ["@babel/plugin-proposal-class-properties"]
+  }
+  if(preset) {
+    ops.presets.push(preset)
+  }
+}
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.jsx",
+    entry: {
+      main: ["@babel/polyfill", "./src/index.tsx"],
+    },
+    optimization: optimization(),
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
+        filename: isDev ? "[name].js" : "[name].[contenthash].js",
     },
     resolve: {
     extensions: [".js", ".json", ".png"],
+    // performance: {
+    //   hints: false,
+    //   maxEntrypointSize: 512000,
+    //   maxAssetSize: 512000
+    // },
     alias: {
       "@models": path.resolve(__dirname, "src/models"),
       "@": path.resolve(__dirname, "src"),
       "@images": path.resolve(__dirname, "src/assets/images")
-    }
+      }
     },
+    optimization: {
+
+    },
+    devtool: isDev ? "eval-source-map" : "source-map",
     devServer: {
         static: {
           directory: path.join(__dirname, "public"),
@@ -36,27 +66,42 @@ module.exports = {
     module: {
         rules:[
         {
-            loader: "babel-loader",
-            test: /\.js$|jsx/,
-            exclude: /node_modules/
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: babelOps(),
+            }
+        },
+        {
+            test: /\.ts$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: babelOps("@babel/preset-typescript"),
+            }
+        },
+        {
+            test: /\.(jsx|tsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: babelOps("@babel/preset-react"),
+            }
         },
         {
           test: /\.(png|PNG|JPG|jpg)$/,
           type: 'asset/resource',
         },
         {
-          test: /\.(woff|woff2)$/,
-          use: "file-loader"
+          test: /\.(woff(2)?|ttf|eot|svg)$/,
+          type: 'asset/resource'
         },
         {
             test: /\.s[ac]ss$/i,
             use: [
               {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                    // hmr: true,
-                    // reloadAll: true
-                }
+                loader: MiniCssExtractPlugin.loader
               },
               {
                 loader: "css-loader",
@@ -79,9 +124,15 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({ template: './src/index.html', favicon: "./src/assets/images/favicon.png", title: "Cubax" }),
+        new HtmlWebpackPlugin({ 
+          template: './src/index.html', 
+          favicon: "./src/assets/images/favicon.png",
+          minify: {
+            collapseWhitespace: isProd
+          }
+         }),
         new MiniCssExtractPlugin({
-            filename: "[name].css",
+            filename: "[name].[contenthash].css",
             chunkFilename: "[id].css",
           })
     ],

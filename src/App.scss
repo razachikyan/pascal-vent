@@ -1,10 +1,17 @@
+@import "~normalize.css";
+@import "./Avenir.css";
+
+body {
+    font-family: "Avenir", serif, sans-serif;
+    background-color: darkorange;
+}
+
 .container {
     background-color: red;
     max-width: 1300px;
     margin: 0 auto;
     padding: 100px;
     font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .image {
