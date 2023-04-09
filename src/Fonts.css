@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Proxima';
+    src: url('./assets/fonts/Proxima-Nova-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Proxima-Nova-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('./assets/fonts/Proxima-Nova-SemiBold.woff2') format('woff2'),
+        url('./assets/fonts/Proxima-Nova-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('./assets/fonts/Proxima-Nova-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Proxima-Nova-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: url('./assets/fonts/Ruberoid-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Ruberoid-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: url('./assets/fonts/Ruberoid-Semibold.woff2') format('woff2'),
+        url('./assets/fonts/Ruberoid-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: url('./assets/fonts/Ruberoid-Medium.woff2') format('woff2'),
+        url('./assets/fonts/Ruberoid-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: url('./assets/fonts/Ruberoid-Light.woff2') format('woff2'),
+        url('./assets/fonts/Ruberoid-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,10 @@
+$light-green: rgba(120, 192, 129, 0.15);
+
+.circle {
+    position: absolute;
+    left: 40px;
+    width: 50px;
+    height: 40px;
+    background-color: $light-green;
+    border-radius: 44px 33px 31px 27px;
+}

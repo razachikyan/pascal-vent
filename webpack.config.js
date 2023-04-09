@@ -20,12 +20,12 @@ const optimization = () => {
 const babelOps = (preset) => {
   const ops = {
     presets: [
-      ['@babel/preset-env', { targets: "defaults" }]
+      ["@babel/preset-env", { targets: "defaults" }]
     ],
     plugins: ["@babel/plugin-proposal-class-properties"]
   }
   if(preset) {
-    ops.presets.push(preset)
+    ops.presets.push(...preset)
   }
 }
 
@@ -40,7 +40,7 @@ module.exports = {
         filename: isDev ? "[name].js" : "[name].[contenthash].js",
     },
     resolve: {
-    extensions: [".js", ".json", ".png"],
+    extensions: [".js", ".json", ".png", ".ts", ".tsx", ".jsx"],
     // performance: {
     //   hints: false,
     //   maxEntrypointSize: 512000,
@@ -69,7 +69,7 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
-              loader: 'babel-loader',
+              loader: "babel-loader",
               options: babelOps(),
             }
         },
@@ -77,21 +77,27 @@ module.exports = {
             test: /\.ts$/,
             exclude: /node_modules/,
             use: {
-              loader: 'babel-loader',
-              options: babelOps("@babel/preset-typescript"),
+              loader: "babel-loader",
+              options: babelOps(["@babel/preset-typescript"]),
             }
         },
         {
-            test: /\.(jsx|tsx)$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: babelOps("@babel/preset-react"),
-            }
+          test: /\.m?[jt]sx$/,
+          exclude: /node_modules/,
+          use: {
+             loader: "babel-loader",
+             options: {
+                presets: [
+                   "@babel/preset-env",
+                   "@babel/preset-typescript",
+                   "@babel/preset-react"
+                ]
+             }
+          }
         },
         {
-          test: /\.(png|PNG|JPG|jpg)$/,
-          type: 'asset/resource',
+          test: /\.(png|PNG|JPG|jpg|svg)$/,
+          type: "asset/resource",
         },
         {
           test: /\.(woff(2)?|ttf|eot|svg)$/,
@@ -106,7 +112,10 @@ module.exports = {
               {
                 loader: "css-loader",
                 options: {
-                    modules: true
+                    modules: {
+                      mode: "local",
+                      localIdentName: "[name]_[local]--[hash:base64:5]"
+                    }
                 }
               },
               {
@@ -118,14 +127,14 @@ module.exports = {
               },
             ],
           },
-        { test: /\.ts$/, use: 'ts-loader' },
+        { test: /\.ts$/, use: "ts-loader" },
     ],
     },
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({ 
-          template: './src/index.html', 
+          template: "./src/index.html", 
           favicon: "./src/assets/images/favicon.png",
           minify: {
             collapseWhitespace: isProd

@@ -1,0 +1,23 @@
+body {
+    background-color: #000;
+}
+
+.back {
+    background-color: rgba(#fff, .45);
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.button {
+    border-radius: 17px;
+    padding: 19px 42px;
+    background: #5CCD6A;
+    box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}

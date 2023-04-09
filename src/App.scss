@@ -1,24 +1,68 @@
 @import "~normalize.css";
-@import "./Avenir.css";
+@import "./Fonts.css";
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
 
 body {
-    font-family: "Avenir", serif, sans-serif;
-    background-color: darkorange;
+    margin: 0;
+    min-width: 320px;
+    font-weight: 400;
+    font-family: "Ruberoid", "Proxima", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
 }
 
 .container {
-    background-color: red;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 100px;
-    font-size: 40px;
+    max-width: 1350px;
 }
 
-.image {
-    width: 100px;
-    height: 100px;
-    background-image: url("@images/favicon.png");
-    background-size: 100px;
-    background-position: right center;
-    background-repeat: no-repeat;
-}
+// $color1: #325232;
+// %common-styles {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 30px;
+// }
+
+// .img {
+//     background-image: url("@images/favicon.png");
+//     &:hover {
+//         //code
+//         color: $color1;
+//         color: rgba(#345889, .5);
+//         @extend %common-styles;
+//     }
+// }
+
