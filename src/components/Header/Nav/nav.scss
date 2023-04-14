@@ -1,15 +1,16 @@
 .list {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .item {
-    padding: 1px;
+  padding: 1px;
 }
 
 .item__link {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: #495E4C;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #495e4c;
 }

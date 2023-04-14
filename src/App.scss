@@ -4,36 +4,37 @@
 *,
 ::before,
 ::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    min-width: 320px;
-    font-weight: 400;
-    font-family: "Ruberoid", "Proxima", sans-serif;
+  margin: 0;
+  min-width: 320px;
+  font-weight: 400;
+  font-family: "Ruberoid", "Proxima", sans-serif;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 button {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 h1,
@@ -42,11 +43,12 @@ h3,
 h4,
 h5,
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .container {
-    max-width: 1350px;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 // $color1: #325232;
@@ -65,4 +67,3 @@ p {
 //         @extend %common-styles;
 //     }
 // }
-

@@ -1,0 +1,54 @@
+$dark-green: #495e4c;
+$green: #78c081;
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 0;
+  background-color: #eaf0c8;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 196px;
+  height: 61px;
+}
+
+.title {
+  font-size: 22px;
+  color: $dark-green;
+  margin: 0;
+}
+
+.descr {
+  color: $green;
+}
+
+.text {
+  max-width: 123px;
+  padding-top: 15px;
+  gap: 3px;
+  max-width: 123px;
+  padding-top: 15px;
+  gap: 3px;
+}
+
+.circle {
+  position: absolute;
+  bottom: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  border-radius: 17px;
+  padding: 19px 42px;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 0.04em;
+}

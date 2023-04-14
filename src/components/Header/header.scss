@@ -1,43 +1,36 @@
-$dark-green: #495E4C;
-$green: #78C081;
+$dark-green: #495e4c;
+$green: #78c081;
 
 .header {
-    padding: 19px 45px;
+  padding: 19px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 196px;
-    height: 61px;
+  width: 196px;
+  height: 61px;
 }
 
 .title {
-    font-size: 22px;
-    color: $dark-green;
-    margin: 0;
+  font-size: 22px;
+  color: $dark-green;
 }
 
 .descr {
-    color: $green;
+  color: $green;
 }
 
-.text {
-    max-width: 123px;
-    padding-top: 15px;
-    gap: 3px;
-    max-width: 123px;
-    padding-top: 15px;
-    gap: 3px;
+.box {
+  display: flex;
+  flex-direction: column;
 }
 
-.circle {
-    position: absolute;
-    bottom: 0;
-}
-
-.text__box {
-    display: flex;
-    flex-direction: column;
+.button {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 0.04em;
+  padding: 19px 42px;
+  border-radius: 17px;
 }
