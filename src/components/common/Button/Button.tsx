@@ -4,16 +4,18 @@ const classNames = require("classnames");
 interface IButtonProps {
   name: string;
   classname?: string;
+  backclass?: string;
   handleClick?: () => void;
 }
 
 export function Button({
   name,
   classname,
+  backclass,
   handleClick = () => {},
 }: IButtonProps) {
   return (
-    <div className={styles.back}>
+    <div className={classNames(styles.back, backclass)}>
       <a
         onClick={(event) => {
           event.preventDefault();
