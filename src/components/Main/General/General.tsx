@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./general.scss";
 import classNames from "classnames";
 import { Button } from "../../common/Button/Button";
+import { ContactBox } from "./ContactBox/ContactNox";
 
 export function General() {
   return (
@@ -22,10 +23,7 @@ export function General() {
             кондиционирования
           </p>
         </div>
-        <div className={classNames(styles.flex, styles.contact)}>
-          <div className="contact"></div>
-          <div className="contact"></div>
-        </div>
+        <ContactBox />
         <Button
           name={"Оставить заявку"}
           classname={styles.button}

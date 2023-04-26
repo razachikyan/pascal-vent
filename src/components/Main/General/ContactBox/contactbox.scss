@@ -1,0 +1,46 @@
+.contacts {
+  display: flex;
+  gap: 80px;
+  margin-right: 56px;
+  margin-bottom: 55px;
+}
+
+.rect {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(#78c081, 0.25);
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.geo {
+  background-image: url("@images/geo.png");
+}
+
+.phone {
+  background-image: url("@images/phone.png");
+}
+
+.contact {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.descr,
+.number {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7b897d;
+  max-width: 154px;
+}
+
+.numbers {
+  position: absolute;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  left: 45px;
+  top: 5px;
+}

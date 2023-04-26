@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Discovery } from "./components/Discovery";
 import { Main } from "./components/Main/Main";
 import { Font } from "./Font";
+import { Footer } from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
               <div className={styles.container}>
                 <Header />
                 <Main />
+                <Footer />
               </div>
             </div>
           }
