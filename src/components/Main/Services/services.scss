@@ -1,0 +1,60 @@
+.services {
+  position: relative;
+  padding: 100px 0;
+  padding-left: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  max-width: 444px;
+}
+
+.line {
+  background: #78c081;
+  width: 245px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 45px;
+  line-height: 60px;
+  text-transform: capitalize;
+  color: #495e4c;
+  margin-bottom: 22px;
+}
+
+.name {
+  font-size: 45px;
+  line-height: 60px;
+  text-transform: capitalize;
+  color: #495e4c;
+}
+
+.descr {
+  font-size: 16px;
+  line-height: 26px;
+  color: #848484;
+}
+
+.right,
+.pic {
+  position: absolute;
+  top: 100px;
+  right: -10px;
+  height: 655px;
+  border-radius: 65px 0px 0px 65px;
+}
+
+.right {
+  padding: 114px 40px;
+  width: 676px;
+  background-color: #d9fadd;
+}
+
+.pic {
+  background-position: -11px -9px;
+  width: 240px;
+  background-image: url("@images/services.png");
+  background-position: top left;
+}
