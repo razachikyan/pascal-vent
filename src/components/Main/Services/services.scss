@@ -29,6 +29,7 @@
   line-height: 60px;
   text-transform: capitalize;
   color: #495e4c;
+  margin-right: 34px;
 }
 
 .descr {
@@ -37,16 +38,22 @@
   color: #848484;
 }
 
-.right,
+.right {
+  position: relative;
+  max-width: 751px;
+  width: 60%;
+  height: 655px;
+}
+
+.body,
 .pic {
   position: absolute;
-  top: 100px;
   right: -10px;
   height: 655px;
   border-radius: 65px 0px 0px 65px;
 }
 
-.right {
+.body {
   padding: 114px 40px;
   width: 676px;
   background-color: #d9fadd;
@@ -57,4 +64,53 @@
   width: 240px;
   background-image: url("@images/services.png");
   background-position: top left;
+}
+
+.right__controls {
+  position: absolute;
+  top: 85px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px 10px;
+  border-radius: 45px 0 0 45px;
+  background-color: #d9fadd;
+  height: 486px;
+  width: 75px;
+}
+
+.button {
+  position: relative;
+  width: 65px;
+  height: 233px;
+  color: #ffffff;
+}
+
+.btn__text {
+  position: absolute;
+  font-size: 12px;
+  line-height: 17px;
+  bottom: 34%;
+  left: -56%;
+  white-space: nowrap;
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.btn1 {
+  border-radius: 40px 0px 0px 0px;
+  box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
+  background-color: #5ccd6a;
+  background-image: url("@images/service-btn1.png");
+  background-repeat: no-repeat;
+  background-position: 16px 25px;
+}
+
+.btn2 {
+  background-color: #ffffff;
+  border-radius: 0px 0px 0px 40px;
+  color: #7ca281;
+  background-image: url("@images/service-btn2.png");
+  background-repeat: no-repeat;
+  background-position: 16px 25px;
 }

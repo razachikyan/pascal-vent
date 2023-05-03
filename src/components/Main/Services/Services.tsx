@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./services.scss";
 import { Line } from "../../common/Line/Line";
+import classNames from "classnames";
+import { ServicesBody } from "./ServicesBody/ServicesBody";
 
 export function Services() {
   return (
     <section className={styles.services}>
       <div className={styles.left}>
         <p className={styles.title}>
-          Предоставляемые <Line classname={styles.line} />{" "}
-          <span className={styles.name}>услуги</span>
+          Предоставляемые <span className={styles.name}>услуги</span>
+          <Line classname={styles.line} />
         </p>
         <p className={styles.descr}>
           При разработке проекта предложим техническое решение оптимальное по
@@ -21,8 +23,20 @@ export function Services() {
           процессами на основе действующей нормативной документации.
         </p>
       </div>
-      <div className={styles.right}></div>
-      <div className={styles.pic}></div>
+      <div className={styles.right}>
+        <div className={styles.right__controls}>
+          <button className={classNames(styles.button, styles.btn1)}>
+            <span className={styles.btn__text}>Система Вентиляции</span>
+          </button>
+          <button className={classNames(styles.button, styles.btn2)}>
+            <span className={styles.btn__text}>Кондиционирование</span>
+          </button>
+        </div>
+        <div className={styles.body}>
+          <ServicesBody version={""} />
+        </div>
+        <div className={styles.pic}></div>
+      </div>
     </section>
   );
 }

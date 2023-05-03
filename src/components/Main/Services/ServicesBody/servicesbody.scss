@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 367px;
+  height: 100%;
+}
+
+.item {
+  padding-left: 45px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #495d4c;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.proecting {
+  background-image: url("@images/proecting.png");
+}
+
+.montage {
+  background-image: url("@images/montage.png");
+}
+
+.montage2 {
+  background-image: url("@images/montage2.png");
+}
+
+.montage3 {
+  background-image: url("@images/montage3.png");
+}
+
+.montage4 {
+  background-image: url("@images/montage4.png");
+}
+
+.montage5 {
+  background-image: url("@images/montage5.png");
+}
