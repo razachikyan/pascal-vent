@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./services.scss";
-import { Line } from "../../common/Line/Line";
+import { Line } from "../../shared/Line/Line";
 import classNames from "classnames";
 import { ServicesBody } from "./ServicesBody/ServicesBody";
 

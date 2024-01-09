@@ -1,7 +1,7 @@
 import React from "react";
-import { Logo } from "./common/Logo/Logo";
+import { Logo } from "./shared/Logo/Logo";
 import styles from "./Discovery.scss";
-import { Button } from "./common/Button/Button";
+import { Button } from "./shared/Button/Button";
 
 export function Discovery() {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./general.scss";
-import { Button } from "../../common/Button/Button";
+import { Button } from "../../shared/Button/Button";
 import { ContactBox } from "./ContactBox/ContactNox";
 import { Circles } from "./Circles/Circles";
-import { Line } from "../../common/Line/Line";
+import { Line } from "../../shared/Line/Line";
 
 export function General() {
   return (

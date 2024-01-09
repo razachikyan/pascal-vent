@@ -9,24 +9,13 @@ import { Footer } from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className={styles.app}>
-              <div className={styles.container}>
-                <Header />
-                <Main />
-                <Footer />
-              </div>
-            </div>
-          }
-        />
-        <Route path="/discovery/" element={<Discovery />} />
-        <Route path="/fonts/" element={<Font />} />
-      </Routes>
-    </BrowserRouter>
+    <div className={styles.app}>
+      <div className={styles.container}>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </div>
   );
 };
 
