@@ -15,3 +15,28 @@
   <a href="https://sass-lang.com/"><img width="50" height="50" src="https://www.svgrepo.com/show/439306/sass.svg" /></a>
   <a href="https://reactrouter.com/"><img width="50" height="50" src="https://www.svgrepo.com/show/354262/react-router.svg" /></a>
 </div>
+
+<h3>
+  Setup and Get Started!
+</h3>
+
+## Setup
+
+- Clone the repository
+`git clone https://github.com/razachikyan/pascal-vent.git`
+
+- Choose the `main` branch `git checkout main`
+
+- Install dependencies
+`npm install`
+
+## Get Started
+
+- Run the project
+`npm start`
+
+- Build the project
+`npm run build`
+
+[Figma](https://www.figma.com/file/RnYKlNVTRDYqseHoV8mhUh/Pascal-Vent?node-id=0%3A1&mode=dev)
+
